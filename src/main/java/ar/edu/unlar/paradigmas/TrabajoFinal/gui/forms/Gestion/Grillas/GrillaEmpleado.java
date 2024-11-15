@@ -41,7 +41,7 @@ public class GrillaEmpleado extends AbstractTableModel{
                 return empleado.getLegajo();
             case 2:
                 return empleado.getDocumento();
-            case 3:
+            case 3: 
                 return empleado.getNombre();
             case 4:
                 return empleado.getApellido();
