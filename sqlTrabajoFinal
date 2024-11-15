@@ -1,0 +1,923 @@
+ALTER TABLE public.accidentes OWNER TO postgres;
+
+--
+-- TOC entry 225 (class 1259 OID 16919)
+-- Name: accidentes_accidente_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.accidentes_accidente_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.accidentes_accidente_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 4928 (class 0 OID 0)
+-- Dependencies: 225
+-- Name: accidentes_accidente_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.accidentes_accidente_id_seq OWNED BY public.accidentes.accidente_id;
+
+
+--
+-- TOC entry 226 (class 1259 OID 16920)
+-- Name: accidentes_empleado_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.accidentes_empleado_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.accidentes_empleado_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 4929 (class 0 OID 0)
+-- Dependencies: 226
+-- Name: accidentes_empleado_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.accidentes_empleado_id_seq OWNED BY public.accidentes.empleado_id;
+
+
+--
+-- TOC entry 228 (class 1259 OID 16922)
+-- Name: accidentes_motivo_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.accidentes_motivo_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.accidentes_motivo_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 4930 (class 0 OID 0)
+-- Dependencies: 228
+-- Name: accidentes_motivo_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.accidentes_motivo_id_seq OWNED BY public.accidentes.motivo_id;
+
+
+--
+-- TOC entry 229 (class 1259 OID 16923)
+-- Name: accidentes_tipo_accidente_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.accidentes_tipo_accidente_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.accidentes_tipo_accidente_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 4931 (class 0 OID 0)
+-- Dependencies: 229
+-- Name: accidentes_tipo_accidente_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.accidentes_tipo_accidente_id_seq OWNED BY public.accidentes.tipo_accidente_id;
+
+
+--
+-- TOC entry 227 (class 1259 OID 16921)
+-- Name: accidentes_ubicacion_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.accidentes_ubicacion_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.accidentes_ubicacion_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 4932 (class 0 OID 0)
+-- Dependencies: 227
+-- Name: accidentes_ubicacion_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.accidentes_ubicacion_id_seq OWNED BY public.accidentes.ubicacion_id;
+
+
+--
+-- TOC entry 234 (class 1259 OID 16957)
+-- Name: accidentes_zonas_cuerpo; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.accidentes_zonas_cuerpo (
+    accidente_zona_cuerpo_id integer NOT NULL,
+    accidente_id integer NOT NULL,
+    zona_cuerpo_id integer NOT NULL
+);
+
+
+ALTER TABLE public.accidentes_zonas_cuerpo OWNER TO postgres;
+
+--
+-- TOC entry 232 (class 1259 OID 16955)
+-- Name: acciones_zonas_cuerpo_accidente_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.acciones_zonas_cuerpo_accidente_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.acciones_zonas_cuerpo_accidente_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 4933 (class 0 OID 0)
+-- Dependencies: 232
+-- Name: acciones_zonas_cuerpo_accidente_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.acciones_zonas_cuerpo_accidente_id_seq OWNED BY public.accidentes_zonas_cuerpo.accidente_id;
+
+
+--
+-- TOC entry 231 (class 1259 OID 16954)
+-- Name: acciones_zonas_cuerpo_accion_zona_cuerpo_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.acciones_zonas_cuerpo_accion_zona_cuerpo_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.acciones_zonas_cuerpo_accion_zona_cuerpo_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 4934 (class 0 OID 0)
+-- Dependencies: 231
+-- Name: acciones_zonas_cuerpo_accion_zona_cuerpo_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.acciones_zonas_cuerpo_accion_zona_cuerpo_id_seq OWNED BY public.accidentes_zonas_cuerpo.accidente_zona_cuerpo_id;
+
+
+--
+-- TOC entry 233 (class 1259 OID 16956)
+-- Name: acciones_zonas_cuerpo_zona_cuerpo_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.acciones_zonas_cuerpo_zona_cuerpo_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.acciones_zonas_cuerpo_zona_cuerpo_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 4935 (class 0 OID 0)
+-- Dependencies: 233
+-- Name: acciones_zonas_cuerpo_zona_cuerpo_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.acciones_zonas_cuerpo_zona_cuerpo_id_seq OWNED BY public.accidentes_zonas_cuerpo.zona_cuerpo_id;
+
+
+--
+-- TOC entry 224 (class 1259 OID 16909)
+-- Name: empleados; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.empleados (
+    empleado_id integer NOT NULL,
+    legajo character varying,
+    dni integer,
+    nombre character varying,
+    apellido character varying,
+    fecha_alta date
+);
+
+
+ALTER TABLE public.empleados OWNER TO postgres;
+
+--
+-- TOC entry 223 (class 1259 OID 16908)
+-- Name: empleados_empleado_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.empleados_empleado_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.empleados_empleado_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 4936 (class 0 OID 0)
+-- Dependencies: 223
+-- Name: empleados_empleado_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.empleados_empleado_id_seq OWNED BY public.empleados.empleado_id;
+
+
+--
+-- TOC entry 220 (class 1259 OID 16891)
+-- Name: motivos; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.motivos (
+    motivo_id integer NOT NULL,
+    descripcion character varying
+);
+
+
+ALTER TABLE public.motivos OWNER TO postgres;
+
+--
+-- TOC entry 219 (class 1259 OID 16890)
+-- Name: motivos_motivo_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.motivos_motivo_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.motivos_motivo_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 4937 (class 0 OID 0)
+-- Dependencies: 219
+-- Name: motivos_motivo_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.motivos_motivo_id_seq OWNED BY public.motivos.motivo_id;
+
+
+--
+-- TOC entry 222 (class 1259 OID 16900)
+-- Name: tipos_accidentes; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tipos_accidentes (
+    tipo_accidente_id integer NOT NULL,
+    tipo character varying
+);
+
+
+ALTER TABLE public.tipos_accidentes OWNER TO postgres;
+
+--
+-- TOC entry 221 (class 1259 OID 16899)
+-- Name: tipos_accidentes_tipo_accidente_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tipos_accidentes_tipo_accidente_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.tipos_accidentes_tipo_accidente_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 4938 (class 0 OID 0)
+-- Dependencies: 221
+-- Name: tipos_accidentes_tipo_accidente_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tipos_accidentes_tipo_accidente_id_seq OWNED BY public.tipos_accidentes.tipo_accidente_id;
+
+
+--
+-- TOC entry 218 (class 1259 OID 16882)
+-- Name: ubicaciones; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.ubicaciones (
+    ubicacion_id integer NOT NULL,
+    lugar character varying
+);
+
+
+ALTER TABLE public.ubicaciones OWNER TO postgres;
+
+--
+-- TOC entry 217 (class 1259 OID 16881)
+-- Name: ubicaciones_ubicacion_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.ubicaciones_ubicacion_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.ubicaciones_ubicacion_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 4939 (class 0 OID 0)
+-- Dependencies: 217
+-- Name: ubicaciones_ubicacion_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.ubicaciones_ubicacion_id_seq OWNED BY public.ubicaciones.ubicacion_id;
+
+
+--
+-- TOC entry 216 (class 1259 OID 16873)
+-- Name: zonas_cuerpo; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.zonas_cuerpo (
+    zona_cuerpo_id integer NOT NULL,
+    region_anatomica character varying,
+    porcion_anatomica character varying
+);
+
+
+ALTER TABLE public.zonas_cuerpo OWNER TO postgres;
+
+--
+-- TOC entry 215 (class 1259 OID 16872)
+-- Name: zonas_cuerpo_zona_cuerpo_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.zonas_cuerpo_zona_cuerpo_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.zonas_cuerpo_zona_cuerpo_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 4940 (class 0 OID 0)
+-- Dependencies: 215
+-- Name: zonas_cuerpo_zona_cuerpo_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.zonas_cuerpo_zona_cuerpo_id_seq OWNED BY public.zonas_cuerpo.zona_cuerpo_id;
+
+
+--
+-- TOC entry 4729 (class 2604 OID 16927)
+-- Name: accidentes accidente_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.accidentes ALTER COLUMN accidente_id SET DEFAULT nextval('public.accidentes_accidente_id_seq'::regclass);
+
+
+--
+-- TOC entry 4730 (class 2604 OID 16928)
+-- Name: accidentes empleado_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.accidentes ALTER COLUMN empleado_id SET DEFAULT nextval('public.accidentes_empleado_id_seq'::regclass);
+
+
+--
+-- TOC entry 4731 (class 2604 OID 16929)
+-- Name: accidentes ubicacion_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.accidentes ALTER COLUMN ubicacion_id SET DEFAULT nextval('public.accidentes_ubicacion_id_seq'::regclass);
+
+
+--
+-- TOC entry 4732 (class 2604 OID 16930)
+-- Name: accidentes motivo_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.accidentes ALTER COLUMN motivo_id SET DEFAULT nextval('public.accidentes_motivo_id_seq'::regclass);
+
+
+--
+-- TOC entry 4733 (class 2604 OID 16931)
+-- Name: accidentes tipo_accidente_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.accidentes ALTER COLUMN tipo_accidente_id SET DEFAULT nextval('public.accidentes_tipo_accidente_id_seq'::regclass);
+
+
+--
+-- TOC entry 4734 (class 2604 OID 16960)
+-- Name: accidentes_zonas_cuerpo accidente_zona_cuerpo_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.accidentes_zonas_cuerpo ALTER COLUMN accidente_zona_cuerpo_id SET DEFAULT nextval('public.acciones_zonas_cuerpo_accion_zona_cuerpo_id_seq'::regclass);
+
+
+--
+-- TOC entry 4735 (class 2604 OID 16961)
+-- Name: accidentes_zonas_cuerpo accidente_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.accidentes_zonas_cuerpo ALTER COLUMN accidente_id SET DEFAULT nextval('public.acciones_zonas_cuerpo_accidente_id_seq'::regclass);
+
+
+--
+-- TOC entry 4736 (class 2604 OID 16962)
+-- Name: accidentes_zonas_cuerpo zona_cuerpo_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.accidentes_zonas_cuerpo ALTER COLUMN zona_cuerpo_id SET DEFAULT nextval('public.acciones_zonas_cuerpo_zona_cuerpo_id_seq'::regclass);
+
+
+--
+-- TOC entry 4728 (class 2604 OID 16912)
+-- Name: empleados empleado_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.empleados ALTER COLUMN empleado_id SET DEFAULT nextval('public.empleados_empleado_id_seq'::regclass);
+
+
+--
+-- TOC entry 4726 (class 2604 OID 16894)
+-- Name: motivos motivo_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.motivos ALTER COLUMN motivo_id SET DEFAULT nextval('public.motivos_motivo_id_seq'::regclass);
+
+
+--
+-- TOC entry 4727 (class 2604 OID 16903)
+-- Name: tipos_accidentes tipo_accidente_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipos_accidentes ALTER COLUMN tipo_accidente_id SET DEFAULT nextval('public.tipos_accidentes_tipo_accidente_id_seq'::regclass);
+
+
+--
+-- TOC entry 4725 (class 2604 OID 16885)
+-- Name: ubicaciones ubicacion_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.ubicaciones ALTER COLUMN ubicacion_id SET DEFAULT nextval('public.ubicaciones_ubicacion_id_seq'::regclass);
+
+
+--
+-- TOC entry 4724 (class 2604 OID 16876)
+-- Name: zonas_cuerpo zona_cuerpo_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.zonas_cuerpo ALTER COLUMN zona_cuerpo_id SET DEFAULT nextval('public.zonas_cuerpo_zona_cuerpo_id_seq'::regclass);
+
+
+--
+-- TOC entry 4917 (class 0 OID 16924)
+-- Dependencies: 230
+-- Data for Name: accidentes; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.accidentes (accidente_id, empleado_id, ubicacion_id, motivo_id, tipo_accidente_id, fecha_accidente) VALUES (1, 1, 1, 1, 2, '2024-11-14');
+INSERT INTO public.accidentes (accidente_id, empleado_id, ubicacion_id, motivo_id, tipo_accidente_id, fecha_accidente) VALUES (2, 2, 2, 3, 2, '2024-11-24');
+INSERT INTO public.accidentes (accidente_id, empleado_id, ubicacion_id, motivo_id, tipo_accidente_id, fecha_accidente) VALUES (3, 3, 1, 2, 1, '2014-12-09');
+
+
+--
+-- TOC entry 4921 (class 0 OID 16957)
+-- Dependencies: 234
+-- Data for Name: accidentes_zonas_cuerpo; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.accidentes_zonas_cuerpo (accidente_zona_cuerpo_id, accidente_id, zona_cuerpo_id) VALUES (1, 1, 12);
+INSERT INTO public.accidentes_zonas_cuerpo (accidente_zona_cuerpo_id, accidente_id, zona_cuerpo_id) VALUES (2, 2, 26);
+INSERT INTO public.accidentes_zonas_cuerpo (accidente_zona_cuerpo_id, accidente_id, zona_cuerpo_id) VALUES (3, 2, 28);
+INSERT INTO public.accidentes_zonas_cuerpo (accidente_zona_cuerpo_id, accidente_id, zona_cuerpo_id) VALUES (4, 3, 34);
+INSERT INTO public.accidentes_zonas_cuerpo (accidente_zona_cuerpo_id, accidente_id, zona_cuerpo_id) VALUES (5, 3, 42);
+
+
+--
+-- TOC entry 4911 (class 0 OID 16909)
+-- Dependencies: 224
+-- Data for Name: empleados; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.empleados (empleado_id, legajo, dni, nombre, apellido, fecha_alta) VALUES (2, 'ELSI373', 39700502, 'Fernando', 'Torres', '2024-11-07');
+INSERT INTO public.empleados (empleado_id, legajo, dni, nombre, apellido, fecha_alta) VALUES (3, 'ELSI694', 40723160, 'Luciano Julia', 'Vera', '2024-11-07');
+INSERT INTO public.empleados (empleado_id, legajo, dni, nombre, apellido, fecha_alta) VALUES (1, 'ELSI499', 33162179, 'Stefano Andres', 'Herrera Arvay', '2024-11-07');
+
+
+--
+-- TOC entry 4907 (class 0 OID 16891)
+-- Dependencies: 220
+-- Data for Name: motivos; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.motivos (motivo_id, descripcion) VALUES (1, 'Caída');
+INSERT INTO public.motivos (motivo_id, descripcion) VALUES (2, 'Choque');
+INSERT INTO public.motivos (motivo_id, descripcion) VALUES (3, 'Quemadura');
+
+
+--
+-- TOC entry 4909 (class 0 OID 16900)
+-- Dependencies: 222
+-- Data for Name: tipos_accidentes; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.tipos_accidentes (tipo_accidente_id, tipo) VALUES (1, 'Operativo');
+INSERT INTO public.tipos_accidentes (tipo_accidente_id, tipo) VALUES (2, 'Otros');
+
+
+--
+-- TOC entry 4905 (class 0 OID 16882)
+-- Dependencies: 218
+-- Data for Name: ubicaciones; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.ubicaciones (ubicacion_id, lugar) VALUES (1, 'Empresa');
+INSERT INTO public.ubicaciones (ubicacion_id, lugar) VALUES (2, 'Externo');
+
+
+--
+-- TOC entry 4903 (class 0 OID 16873)
+-- Dependencies: 216
+-- Data for Name: zonas_cuerpo; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (1, 'Craneal', 'Craneo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (2, 'Facial', 'Frente');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (3, 'Facial', 'Ojo derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (4, 'Facial', 'Ojo izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (5, 'Facial', 'Oreja derecha');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (6, 'Facial', 'Oreja izquierda');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (7, 'Facial', 'Nariz');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (8, 'Facial', 'Boca');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (9, 'Facial', 'Mandibula');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (10, 'Facial', 'Menton');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (11, 'Cervical', 'Cuello');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (12, 'Dorsal', 'Espalda');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (13, 'Lumbar', 'Lomos');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (14, 'Tronco', 'Pecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (15, 'Tronco', 'Axila derecha');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (16, 'Tronco', 'Axila izquierda');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (17, 'Tronco', 'Seno derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (18, 'Tronco', 'Seno izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (19, 'Tronco', 'Abdomen');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (20, 'Coxal', 'Cadera');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (21, 'Pelvis', 'Ingle');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (22, 'Pelvis', 'Puvis');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (23, 'Gluteo', 'Nalga derecha');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (24, 'Gluteo', 'Nalga izquierda');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (25, 'Miembro Superior', 'Hombro derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (26, 'Miembro Superior', 'Hombro izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (27, 'Miembro Superior', 'Brazo derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (28, 'Miembro Superior', 'Brazo izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (29, 'Miembro Superior', 'Codo derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (30, 'Miembro Superior', 'Codo izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (31, 'Miembro Superior', 'Antebrazo derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (32, 'Miembro Superior', 'Antebrazo izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (33, 'Miembro Superior', 'Muñeca derecha');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (34, 'Miembro Superior', 'Muñeca izquierda');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (35, 'Miembro Superior', 'Palma de mano derecha');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (36, 'Miembro Superior', 'Palma de mano izquierda');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (37, 'Miembro Superior', 'Dedo meñique derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (38, 'Miembro Superior', 'Dedo meñique izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (39, 'Miembro Superior', 'Dedo anular derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (40, 'Miembro Superior', 'Dedo anular izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (41, 'Miembro Superior', 'Dedo mayor derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (42, 'Miembro Superior', 'Dedo mayor izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (43, 'Miembro Superior', 'Dedo indice derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (44, 'Miembro Superior', 'Dedo indice izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (45, 'Miembro Superior', 'Dedo gordo derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (46, 'Miembro Superior', 'Dedo gordo izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (47, 'Miembro Inferior', 'Muslo derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (48, 'Miembro Inferior', 'Muslo izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (49, 'Miembro Inferior', 'Rodilla derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (50, 'Miembro Inferior', 'Rodilla izquierda');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (51, 'Miembro Inferior', 'Pierna derecha');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (52, 'Miembro Inferior', 'Pierna izquierda');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (53, 'Miembro Inferior', 'Pantorrilla derecha');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (54, 'Miembro Inferior', 'Pantorrilla izquierda');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (55, 'Miembro Inferior', 'Tobillo derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (56, 'Miembro Inferior', 'Tobillo izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (57, 'Miembro Inferior', 'Empeine del pie derecha');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (58, 'Miembro Inferior', 'Empeine del pie izquierda');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (59, 'Miembro Inferior', 'Planta del pie derecha');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (60, 'Miembro Inferior', 'Planta del pie izquierda');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (61, 'Miembro Inferior', 'Dedo meñique derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (62, 'Miembro Inferior', 'Dedo meñique izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (63, 'Miembro Inferior', 'Dedo anular derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (64, 'Miembro Inferior', 'Dedo anular izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (65, 'Miembro Inferior', 'Dedo mayor derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (66, 'Miembro Inferior', 'Dedo mayor izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (67, 'Miembro Inferior', 'Dedo indice derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (68, 'Miembro Inferior', 'Dedo indice izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (69, 'Miembro Inferior', 'Dedo gordo derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (70, 'Miembro Inferior', 'Dedo gordo izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (71, 'Organo', 'Encefalo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (72, 'Organo', 'Lengua');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (73, 'Organo', 'Corazon');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (74, 'Organo', 'Pulmon derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (75, 'Organo', 'Pulmon izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (76, 'Organo', 'Estomago');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (77, 'Organo', 'Higado');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (78, 'Organo', 'Vesicula viliar');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (79, 'Organo', 'Pancreas');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (80, 'Organo', 'Bazo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (81, 'Organo', 'Riñon derecho');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (82, 'Organo', 'Riñon izquierdo');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (83, 'Organo', 'Intestino');
+INSERT INTO public.zonas_cuerpo (zona_cuerpo_id, region_anatomica, porcion_anatomica) VALUES (84, 'Organo', 'Aparato reproductor');
+
+
+--
+-- TOC entry 4941 (class 0 OID 0)
+-- Dependencies: 225
+-- Name: accidentes_accidente_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.accidentes_accidente_id_seq', 3, true);
+
+
+--
+-- TOC entry 4942 (class 0 OID 0)
+-- Dependencies: 226
+-- Name: accidentes_empleado_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.accidentes_empleado_id_seq', 1, false);
+
+
+--
+-- TOC entry 4943 (class 0 OID 0)
+-- Dependencies: 228
+-- Name: accidentes_motivo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.accidentes_motivo_id_seq', 1, false);
+
+
+--
+-- TOC entry 4944 (class 0 OID 0)
+-- Dependencies: 229
+-- Name: accidentes_tipo_accidente_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.accidentes_tipo_accidente_id_seq', 1, false);
+
+
+--
+-- TOC entry 4945 (class 0 OID 0)
+-- Dependencies: 227
+-- Name: accidentes_ubicacion_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.accidentes_ubicacion_id_seq', 1, false);
+
+
+--
+-- TOC entry 4946 (class 0 OID 0)
+-- Dependencies: 232
+-- Name: acciones_zonas_cuerpo_accidente_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.acciones_zonas_cuerpo_accidente_id_seq', 1, false);
+
+
+--
+-- TOC entry 4947 (class 0 OID 0)
+-- Dependencies: 231
+-- Name: acciones_zonas_cuerpo_accion_zona_cuerpo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.acciones_zonas_cuerpo_accion_zona_cuerpo_id_seq', 5, true);
+
+
+--
+-- TOC entry 4948 (class 0 OID 0)
+-- Dependencies: 233
+-- Name: acciones_zonas_cuerpo_zona_cuerpo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.acciones_zonas_cuerpo_zona_cuerpo_id_seq', 1, false);
+
+
+--
+-- TOC entry 4949 (class 0 OID 0)
+-- Dependencies: 223
+-- Name: empleados_empleado_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.empleados_empleado_id_seq', 3, true);
+
+
+--
+-- TOC entry 4950 (class 0 OID 0)
+-- Dependencies: 219
+-- Name: motivos_motivo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.motivos_motivo_id_seq', 3, true);
+
+
+--
+-- TOC entry 4951 (class 0 OID 0)
+-- Dependencies: 221
+-- Name: tipos_accidentes_tipo_accidente_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tipos_accidentes_tipo_accidente_id_seq', 2, true);
+
+
+--
+-- TOC entry 4952 (class 0 OID 0)
+-- Dependencies: 217
+-- Name: ubicaciones_ubicacion_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.ubicaciones_ubicacion_id_seq', 2, true);
+
+
+--
+-- TOC entry 4953 (class 0 OID 0)
+-- Dependencies: 215
+-- Name: zonas_cuerpo_zona_cuerpo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.zonas_cuerpo_zona_cuerpo_id_seq', 84, true);
+
+
+--
+-- TOC entry 4750 (class 2606 OID 16933)
+-- Name: accidentes accidente_id_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.accidentes
+    ADD CONSTRAINT accidente_id_pkey PRIMARY KEY (accidente_id);
+
+
+--
+-- TOC entry 4752 (class 2606 OID 16964)
+-- Name: accidentes_zonas_cuerpo accidente_zona_cuerpo_id_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.accidentes_zonas_cuerpo
+    ADD CONSTRAINT accidente_zona_cuerpo_id_pkey PRIMARY KEY (accidente_zona_cuerpo_id);
+
+
+--
+-- TOC entry 4746 (class 2606 OID 16916)
+-- Name: empleados empleado_id_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.empleados
+    ADD CONSTRAINT empleado_id_pkey PRIMARY KEY (empleado_id);
+
+
+--
+-- TOC entry 4748 (class 2606 OID 16918)
+-- Name: empleados legajo_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.empleados
+    ADD CONSTRAINT legajo_unique UNIQUE (legajo) INCLUDE (legajo);
+
+
+--
+-- TOC entry 4742 (class 2606 OID 16898)
+-- Name: motivos motivo_id_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.motivos
+    ADD CONSTRAINT motivo_id_pkey PRIMARY KEY (motivo_id);
+
+
+--
+-- TOC entry 4744 (class 2606 OID 16907)
+-- Name: tipos_accidentes tipo_accidente_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipos_accidentes
+    ADD CONSTRAINT tipo_accidente_pkey PRIMARY KEY (tipo_accidente_id);
+
+
+--
+-- TOC entry 4740 (class 2606 OID 16889)
+-- Name: ubicaciones ubicacion_id_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.ubicaciones
+    ADD CONSTRAINT ubicacion_id_pkey PRIMARY KEY (ubicacion_id);
+
+
+--
+-- TOC entry 4738 (class 2606 OID 16880)
+-- Name: zonas_cuerpo zona_cuerpo_id_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.zonas_cuerpo
+    ADD CONSTRAINT zona_cuerpo_id_pkey PRIMARY KEY (zona_cuerpo_id);
+
+
+--
+-- TOC entry 4757 (class 2606 OID 16965)
+-- Name: accidentes_zonas_cuerpo accidente_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.accidentes_zonas_cuerpo
+    ADD CONSTRAINT accidente_id_fkey FOREIGN KEY (accidente_id) REFERENCES public.accidentes(accidente_id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+--
+-- TOC entry 4753 (class 2606 OID 16934)
+-- Name: accidentes empleado_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.accidentes
+    ADD CONSTRAINT empleado_id_fkey FOREIGN KEY (empleado_id) REFERENCES public.empleados(empleado_id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+--
+-- TOC entry 4754 (class 2606 OID 16944)
+-- Name: accidentes motivo_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.accidentes
+    ADD CONSTRAINT motivo_id_fkey FOREIGN KEY (motivo_id) REFERENCES public.motivos(motivo_id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+--
+-- TOC entry 4755 (class 2606 OID 16949)
+-- Name: accidentes tipo_accidente_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.accidentes
+    ADD CONSTRAINT tipo_accidente_id_fkey FOREIGN KEY (tipo_accidente_id) REFERENCES public.tipos_accidentes(tipo_accidente_id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+--
+-- TOC entry 4756 (class 2606 OID 16939)
+-- Name: accidentes ubicacion_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.accidentes
+    ADD CONSTRAINT ubicacion_id_fkey FOREIGN KEY (ubicacion_id) REFERENCES public.ubicaciones(ubicacion_id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+--
+-- TOC entry 4758 (class 2606 OID 16970)
+-- Name: accidentes_zonas_cuerpo zona_cuerpo_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.accidentes_zonas_cuerpo
+    ADD CONSTRAINT zona_cuerpo_id_fkey FOREIGN KEY (zona_cuerpo_id) REFERENCES public.zonas_cuerpo(zona_cuerpo_id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+-- Completed on 2024-11-07 02:34:13
+
+--
+-- PostgreSQL database dump complete
+--
+
+
